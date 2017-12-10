@@ -60,6 +60,7 @@
             <center>
                 <img id = 'imgShowMessage' width = "50px" />
                 <h3 class="modal-title" id="messageModalLabel"></h3>
+                <h4 class="modal-title" id="messageModalLabel2"></h4>
             </center>
         </div>
     </div>

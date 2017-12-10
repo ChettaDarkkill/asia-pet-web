@@ -75,6 +75,19 @@ class Service_model extends CI_Model {
        $result = $query->result_array();
        return $result;
   }
+  public function searchAppo4($search){
+       $sql = "
+                select b.first_name, b.last_name , a.* 
+                from clinic_appointment a left join clinic_member b 
+                on a.member_id = b.id 
+                where b.member_id like '%".$search."%'
+                and a.status_booking = 3
+                and a.flag = 0
+                order by created_dt desc";
+       $query = $this->db->query($sql);
+       $result = $query->result_array();
+       return $result;
+  }
   public function searchAppo2($search){
        $sql = "
                 select b.first_name, b.last_name , a.* 

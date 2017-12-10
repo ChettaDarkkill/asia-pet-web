@@ -26,6 +26,9 @@
                                 <div class="radio">
                                   <label><input value="3" type="radio" name="typeOfSearch">ชื่อสัตว์เลี้ยง</label>
                                 </div>
+                                <div class="radio">
+                                  <label><input value="4" type="radio" name="typeOfSearch">เลขที่สมาชิก</label>
+                                </div>
                             </div>
                         <!-- Search Field -->
                             <div class="row">

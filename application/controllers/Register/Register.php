@@ -80,13 +80,15 @@ class Register extends MY_Controller {
            break;
        }
      }
+     $arr['member_id'] = $arr['username'].generateRandomString();
+
      $ch = $this->checkDuplicateUser($arr);
      if($ch != 0) {
         echo  400;
      } else {
         $arr['role'] = 'user';
         $this->register_model->insertUser($arr);
-        echo 200;
+        echo "200".$arr['member_id'];
      }
   }
   public function checkDuplicateUser($arr){

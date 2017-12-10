@@ -121,10 +121,10 @@
                 <label for="exampleInputPassword1">เบอร์โทรศัพท์</label>
                 <input type="number" class="form-control" id="mobile" name = "mobile" placeholder="เบอร์โทรศัพท์">
               </div>
-              <div class="form-group">
+<!--               <div class="form-group">
                 <label for="exampleInputPassword1">เลขที่สมาชิก</label>
                 <input type="number" class="form-control" id="member_id" name = "member_id" placeholder="เลขที่สมาชิก">
-              </div>
+              </div> -->
              <hr/>
               <div class="form-group">
                 <h3>รายละเอียดอื่นๆ</h3>
@@ -341,7 +341,7 @@ $('#username').on("paste",function(e)
         
         appo_animal: "required", 
         animal_name: "required",
-        member_id: "required",
+        //member_id: "required",
         breed: "required",
         color: "required",
         first_name: "required",
@@ -355,7 +355,7 @@ $('#username').on("paste",function(e)
       messages: {
         appo_animal: "<span style = 'color:red'>กรุณาเลือก ชนิดของสัตว์</span>",
         animal_name: "<span style = 'color:red'>กรุณากรอก ชื่อสัตว์</span>",
-        member_id: "<span style = 'color:red'>กรุณากรอก เลขที่สมาชิก</span>",
+        //member_id: "<span style = 'color:red'>กรุณากรอก เลขที่สมาชิก</span>",
         breed: "<span style = 'color:red'>กรุณากรอก พันธุ์</span>",
         color: "<span style = 'color:red'>กรุณากรอก สี</span>",
         first_name: "<span style = 'color:red'>กรุณากรอก ชื่อ</span>",
@@ -373,11 +373,16 @@ $('#username').on("paste",function(e)
         var data = $('#registration').serializeArray();
         var url = "<?php echo $a.'index.php/Register/Register/postRegister'; ?>";
         $.post( url , {'data' : data} , function( data ) {
-          if(data == 200){
+          var codeStudent = data.substring(3);
+          codeStudent = codeStudent.toLowerCase();
+          var data = data.substring(0,3);
+          
+          //alert(data);
+          if(data == "200"){
              document.getElementById("registration").reset();
              $('#closeLoadingPanel').click();
              $('#imgShowMessage').attr("src", "<?php echo $a; ?>assets/img/success.svg");
-             $('#messageModalLabel').text('สมัครใช้งานเรียบร้อยแล้ว');
+             $('#messageModalLabel').text('สมัครใช้งานเรียบร้อยแล้ว เลขที่สมาชิกของคุณคือ : '+ codeStudent);
              $('#clickToShowMessage').click();
           } else if( data == 400){
              $('#closeLoadingPanel').click();

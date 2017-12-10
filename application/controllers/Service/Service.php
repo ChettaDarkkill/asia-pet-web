@@ -294,6 +294,8 @@ class Service extends MXAdmin_Controller {
         $dataSearch = $this->service_model->searchAppo($search);
     } else if($typeOfSearch == 2) {
         $dataSearch = $this->service_model->searchAppo2($search);
+    } else if($typeOfSearch == 4) {
+        $dataSearch = $this->service_model->searchAppo4($search);
     } else {
         $dataSearch = $this->service_model->searchAppo3($search);
     }

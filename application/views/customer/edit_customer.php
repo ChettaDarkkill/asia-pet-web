@@ -69,7 +69,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label" for="twitter">เลขที่สมาชิก</label>  
               <div class="col-md-6">
-              <input id="member_id" name = "member_id" type="text" placeholder="เลขที่สมาชิก" class="form-control input-md" value = "<?php echo $listUser['member_id']; ?>">
+              <input id="member_id" readonly name = "member_id" type="text" placeholder="เลขที่สมาชิก" class="form-control input-md" value = "<?php echo $listUser['member_id']; ?>">
                 
               </div>
             </div>
